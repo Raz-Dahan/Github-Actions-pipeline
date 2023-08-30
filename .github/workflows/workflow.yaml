@@ -187,6 +187,7 @@ jobs:
             helm repo update
             helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring
             echo "Prometheus installed."
+            kubectl patch svc prometheus-grafana -n monitoring -p '{"spec": {"type": "LoadBalancer"}}'
           fi
 
   cleanups:
