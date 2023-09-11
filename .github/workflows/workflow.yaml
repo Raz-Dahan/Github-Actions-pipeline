@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       custom-name:
-        description: 'Enter a name for the workflow run'
+        description: "Enter a name for the workflow run"
         required: false
 
 env:
@@ -82,7 +82,7 @@ jobs:
 
       - name: Define TAG and HELM_PACKAGE
         run: |
-          TAG=$(bash versioning.sh --no-rename)
+          TAG=$(bash versioning.sh)
           HELM_PACKAGE=nasa-app-${TAG}.tgz
           echo "TAG=${TAG}" >> $GITHUB_ENV
           echo "HELM_PACKAGE=${HELM_PACKAGE}" >> $GITHUB_ENV
@@ -125,7 +125,7 @@ jobs:
 
       - name: Define TAG and HELM_PACKAGE
         run: |
-          TAG=$(bash versioning.sh --no-rename)
+          TAG=$(bash versioning.sh)
           HELM_PACKAGE=nasa-app-${TAG}.tgz
           echo "TAG=${TAG}" >> $GITHUB_ENV
           echo "HELM_PACKAGE=${HELM_PACKAGE}" >> $GITHUB_ENV
