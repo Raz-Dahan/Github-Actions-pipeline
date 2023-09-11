@@ -5,7 +5,7 @@ metadata:
   annotations:
     "helm.sh/hook": test
 spec:
-  completions: 1 
+  completions: 1
   template:
     metadata:
       name: "redis-response-test"
@@ -26,7 +26,7 @@ metadata:
   annotations:
     "helm.sh/hook": test
 spec:
-  completions: 1 
+  completions: 1
   template:
     metadata:
       name: "app-http-test"
@@ -45,5 +45,5 @@ spec:
           image: razdahan31/gha-pipeline:{{ .Values.TAG }}
           command: ["sh", "-c"]
           args:
-            - "curl http://nasa-service.app.svc.cluster.local"
+            - "curl http://nasa-service.test.svc.cluster.local"
       restartPolicy: Never
