@@ -33,4 +33,4 @@ This pipeline gives developers the option to deploy their app with a simple push
 
 3. That's it! Push your code changes to the `main` branch to trigger the workflow.
 
-- GCP serverless Cloud Functions can be triggered automatically using an event trigger, but due to financial considerations, it is triggered manually during the `cleanups` job in the workflow.
+- GCP serverless Cloud Functions can be triggered automatically using an event trigger, but for clarity, it is triggered manually during the `cleanups` job in the workflow.
