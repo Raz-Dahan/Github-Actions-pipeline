@@ -108,8 +108,8 @@ jobs:
 
       - name: Deploy Helm chart
         run: |
-          kubectl get namespace app >/dev/null 2>&1 && echo "Namespace 'app' already exists." || kubectl create namespace app && echo "Namespace 'app' created."
-          helm upgrade --install nasa-app ${{ env.HELM_PACKAGE }} --namespace app
+          kubectl get namespace test >/dev/null 2>&1 && echo "Namespace 'test' already exists." || kubectl create namespace test && echo "Namespace 'test' created."
+          helm upgrade --install nasa-app ${{ env.HELM_PACKAGE }} --namespace test
 
       - name: Run Helm Tests
         run: |
