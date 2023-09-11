@@ -113,7 +113,7 @@ jobs:
 
       - name: Run Helm Tests
         run: |
-          helm test nasa-app --namespace app || (curl -X POST https://us-central1-named-signal-392608.cloudfunctions.net/mark_failures && exit 1)
+          helm test nasa-app --namespace test || (curl -X POST https://us-central1-named-signal-392608.cloudfunctions.net/mark_failures && exit 1)
 
   deploy:
     needs: test
